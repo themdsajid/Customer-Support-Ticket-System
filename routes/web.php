@@ -9,11 +9,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/dashboard', function (Request $request) {
+Route::get('/', function (Request $request) {
     if (Auth::user()->role === 'admin') {
 
         $query = Ticket::with('user');
